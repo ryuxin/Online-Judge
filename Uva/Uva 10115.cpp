@@ -10,31 +10,25 @@ int main()
 {
 	int n,i,j,lf,lr,ld;
 	char *p;
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		if(n==0)
 			break;
 		gets(data);
-		for(i=0;i<n;i++)
-		{
+		for(i=0;i<n;i++) {
 			gets(find_s[i]);
 			gets(reply[i]);
 		}
 		gets(data);
-		for(i=0;i<n;i++)
-		{
+		for(i=0;i<n;i++) {
 			lf=strlen(find_s[i]);
 			lr=strlen(reply[i]);
-			while((p=strstr(data,find_s[i]))!=NULL)
-			{
+			while((p=strstr(data,find_s[i]))!=NULL) {
 				ld=strlen(data);
-				if(lf>lr)
-				{
+				if(lf>lr) {
 					for(j=p-data+lf;j<=ld;j++)
 						data[j-lf+lr]=data[j];
 				}
-				else
-				{
+				else {
 					for(j=ld;j>=p-data+lf;j--)
 						data[j-lf+lr]=data[j];
 				}

@@ -24,24 +24,19 @@ int main()
 	char temp[Len];
 	int i,t,l=0;
 	cin>>t;
-	for(i=0;i<t;i++)
-	{
+	for(i=0;i<t;i++) {
 		data[i].na[0]='\0';
 		data[i].num=0;
 	}
-	while(t--)
-	{
+	while(t--) {
 		cin>>temp;
-		for(i=0;i<l;i++)
-		{
-			if(strcmp(data[i].na,temp)==0)
-			{
+		for(i=0;i<l;i++) {
+			if(strcmp(data[i].na,temp)==0) {
 				data[i].num++;
 				break;
 			}
 		}
-		if(i==l)
-		{
+		if(i==l) {
 			strcpy(data[l].na,temp);
 			data[l++].num++;
 		}

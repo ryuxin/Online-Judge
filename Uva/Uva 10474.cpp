@@ -17,8 +17,7 @@ int comp(const void *a1,const void *a2)
 int main()
 {
 	int i,n,q,c=0,t;
-	while(1)
-	{
+	while(1) {
 		cin>>n>>q;
 		if(n==0)
 			break;
@@ -27,8 +26,7 @@ int main()
 		for(i=0;i<n;i++)
 			cin>>data[i];
 		qsort(data,n,sizeof(int),comp);
-		while(q--)
-		{
+		while(q--) {
 			cin>>t;
 			for(i=0;i<n;i++)
 				if(data[i]==t)

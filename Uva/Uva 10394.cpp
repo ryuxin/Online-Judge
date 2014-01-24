@@ -19,10 +19,8 @@ void Shaifa(void)
 {
 	int i=2,j;
 	len=0;
-	while(i<=Max_int)
-	{
-		if(num[i]==false)
-		{
+	while(i<=Max_int) {
+		if(num[i]==false) {
 			selectout[len++]=i;
 			for(j=i;j<=Max_int;j=j+i)
 				num[j]=true;
@@ -34,10 +32,8 @@ void Shaifa(void)
 void Process(void)
 {
 	int i,j=0;
-	for(i=0;i<len-1;i++)
-	{
-		if(selectout[i]==selectout[i+1]-2)
-		{
+	for(i=0;i<len-1;i++) {
+		if(selectout[i]==selectout[i+1]-2) {
 			sushu[j++]=selectout[i];             //这里找出的孪生素数对可能超过
 			if(j>100000)                         //题目的约定，以至于超出数组的范围
 				break;
@@ -50,8 +46,7 @@ int main()
 	int s;
 	Shaifa();
 	Process();
-	while(cin>>s)
-	{
+	while(cin>>s) {
 		printf("(%d, %d)\n",sushu[s-1],sushu[s-1]+2);
 	}
 	return 0;
