@@ -27,7 +27,7 @@ int main()
 			j = j+n;
         }
 		if(t != 0)
-	        printf("%d\n\n", n);
+			printf("%d\n\n", n);
 		else
 			printf("%d\n", n);
     }
