@@ -17,20 +17,19 @@ int main()
         else
             temp = -1*r;
         n = (-1+sqrt(1.0+8.0*temp))/2;
-		if(n*(n+1)/2<temp || n<1)
-			n++;
-		j = n*(n+1)/2;
+        if(n*(n+1)/2<temp || n<1)
+            n++;
+        j = n*(n+1)/2;
         while(1) {
             if((j-temp)%2 == 0)
                 break;
             n++;
-			j = j+n;
+            j = j+n;
         }
-		if(t != 0)
-			printf("%d\n\n", n);
-		else
-			printf("%d\n", n);
+        if(t != 0)
+            printf("%d\n\n", n);
+        else
+            printf("%d\n", n);
     }
     return 0;
 }
-
