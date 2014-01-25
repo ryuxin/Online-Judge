@@ -19,8 +19,7 @@ void DFS(int x,int y)
 int main()
 {
 	int m,n,r,i,j;
-	while(cin>>m>>n)
-	{
+	while(cin>>m>>n) {
 		if(m==0)
 			break;
 		for(i=1;i<=m;i++)
@@ -32,10 +31,8 @@ int main()
 			data[0][i]=data[m+1][i]='*';
 		r=0;
 		for(i=1;i<=m;i++)
-			for(j=1;j<=n;j++)
-			{
-				if(data[i][j]=='@')
-				{
+			for(j=1;j<=n;j++) {
+				if(data[i][j]=='@') {
 					DFS(i,j);
 					r++;
 				}

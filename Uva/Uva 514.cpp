@@ -10,14 +10,11 @@ int sa[2000],sc[2000],topa,topc,data[2000];
 int main()
 {
 	int n,i;	
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		if(n==0)
 			break;
-		while(cin>>data[0])
-		{
-			if(data[0]==0)
-			{
+		while(cin>>data[0]) {
+			if(data[0]==0) {
 				cout<<endl;
 				break;
 			}
@@ -27,32 +24,24 @@ int main()
 				sa[i]=n-i;
 			topa=n-1;
 			topc=-1;
-			for(i=0;i<n;)
-			{
-				if(topa==-1)
-				{
-					if(topc==-1||sc[topc]!=data[i])
-					{
+			for(i=0;i<n;) {
+				if(topa==-1) {
+					if(topc==-1||sc[topc]!=data[i]) {
 						cout<<"No"<<endl;
 						break;
 					}
-					else
-					{
+					else {
 						topc--;
 						i++;
 					}
 				}
-				else
-				{
-					if(sa[topa]==data[i])
-					{
+				else {
+					if(sa[topa]==data[i]) {
 						topa--;
 						i++;
 					}
-					else
-					{
-						if(topc>=0&&sc[topc]==data[i])
-						{
+					else {
+						if(topc>=0&&sc[topc]==data[i]) {
 							topc--;
 							i++;
 						}

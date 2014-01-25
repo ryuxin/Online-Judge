@@ -10,15 +10,12 @@ int main()
 {
 	int n,d,k,i,r,leave;
 	cin>>n;
-	while(n--)
-	{
+	while(n--) {
 		cin>>d>>k;
 		leave=pow(2.0,d-1);
 		r=0;
-		for(i=1;i<d;i++)
-		{
-			if(k%2==0)
-			{
+		for(i=1;i<d;i++) {
+			if(k%2==0) {
 				r=r+leave/2;
 				k=k/2;
 			}

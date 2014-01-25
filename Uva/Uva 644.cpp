@@ -17,20 +17,15 @@ int main()
 	int i,j,k,c=0;
 	bool re;
 	i=0;
-	while(cin>>code[i])
-	{
-		if(code[i][0]=='9')
-		{
+	while(cin>>code[i]) {
+		if(code[i][0]=='9') {
 			c++;
 			re=true;
 			qsort(code,i,sizeof(code[0]),comp);
-			for(j=0;j<i-1;j++)
-			{
-				for(k=j+1;k<i;k++)
-				{
+			for(j=0;j<i-1;j++) {
+				for(k=j+1;k<i;k++) {
 					//!!必须是前缀，也就是起始相同的位置必须在开始处
-					if(strstr(code[k],code[j])==code[k])
-					{
+					if(strstr(code[k],code[j])==code[k]) {
 						re=false;
 						break;
 					}

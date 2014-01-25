@@ -19,8 +19,7 @@ void Output(bool);               //进行宽搜，输出二叉树
 void Initial(void)
 {
 	int i;
-	for(i=0;i<300;i++)
-	{
+	for(i=0;i<300;i++) {
 		v[i]=-1;
 		leftnode[i]=-1;
 		rightnode[i]=-1;
@@ -43,8 +42,7 @@ void Passer(char *s)
 	start=i+1;
 	end=l-2;
 	i--;
-	while(i>0)
-	{
+	while(i>0) {
 		re=re+j*(s[i]-'0');
 		i--;
 		j=j*10;
@@ -55,29 +53,23 @@ void Passer(char *s)
 bool Constrct(void)
 {
 	int current=root,i;
-	for(i=start;i<=end;i++)
-	{
-		if(node[i]=='L')
-		{
-			if(leftnode[current]==-1)
-			{
+	for(i=start;i<=end;i++) {
+		if(node[i]=='L') {
+			if(leftnode[current]==-1) {
 				leftnode[current]=freelist;
 				freelist++;
 			}
 			current=leftnode[current];
 		}
-		if(node[i]=='R')
-		{
-			if(rightnode[current]==-1)
-			{
+		if(node[i]=='R') {
+			if(rightnode[current]==-1) {
 				rightnode[current]=freelist;
 				freelist++;
 			}
 			current=rightnode[current];
 		}
 	}
-	if(v[current]==-1)
-	{
+	if(v[current]==-1) {
 		v[current]=value;
 		return true;
 	}
@@ -95,30 +87,25 @@ bool Check(void)
 void Output(bool c)
 {
 	int t,first=0;
-	if(c==false)
-	{
+	if(c==false) {
 		cout<<"not complete"<<endl;
 		return ;
 	}
 	head=0;
 	tail=1;
 	queue[head]=root;
-	while(head!=tail)
-	{
+	while(head!=tail) {
 		t=queue[head];
 		head=(head+1)%150;
-		if(leftnode[t]!=-1)
-		{
+		if(leftnode[t]!=-1) {
 			queue[tail]=leftnode[t];
 			tail=(tail+1)%150;
 		}
-		if(rightnode[t]!=-1)
-		{
+		if(rightnode[t]!=-1) {
 			queue[tail]=rightnode[t];
 			tail=(tail+1)%150;
 		}
-		if(first==0)
-		{
+		if(first==0) {
 			cout<<v[t];
 			first++;
 		}
@@ -131,18 +118,15 @@ void Output(bool c)
 int main()
 {
 	Initial();
-	while(cin>>node)
-	{
-		if(strcmp(node,"()")==0)
-		{
+	while(cin>>node) {
+		if(strcmp(node,"()")==0) {
 			if(correct==true)
 				correct=Check();
 			Output(correct);
 			Initial();
 			continue;
 		}
-		if(correct==true)
-		{
+		if(correct==true) {
 			Passer(node);
 			correct=Constrct();
 		}

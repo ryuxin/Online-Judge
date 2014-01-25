@@ -14,8 +14,7 @@ void Recover(int sp,int si,int len)
 		return ;
 	if(len==1)                                //只有一个节点，直接输出
 		cout<<pre[sp];
-	else
-	{
+	else {
 		for(i=si;i<si+len;i++)                //寻找根节点，划分两个子树
 			if(in[i]==pre[sp])
 				break;            
@@ -28,8 +27,7 @@ void Recover(int sp,int si,int len)
 int main()
 {
 	int l;
-	while(cin>>pre>>in)
-	{
+	while(cin>>pre>>in) {
 		l=strlen(pre);
 		Recover(0,0,l);
 		cout<<endl;

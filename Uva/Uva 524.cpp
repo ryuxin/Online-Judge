@@ -25,10 +25,10 @@ void DFS(int k)
 	j=k%2;
 	for(i=2-j;i<=n;i=i+2) {
 		if((used[i]==false)&&(sushu[i+re[k-1]]==true)) {
-				re[k]=i;
-				used[i]=true;
-				DFS(k+1);
-				used[i]=false;
+			re[k]=i;
+			used[i]=true;
+			DFS(k+1);
+			used[i]=false;
 		}
 	}
 }
@@ -49,7 +49,7 @@ int main()
 			used[i]=false;
 		t++;
 		if(t!=1)
-				printf("\n");
+			printf("\n");
 		printf("Case %d:\n", t);
 		DFS(2);
 	}
