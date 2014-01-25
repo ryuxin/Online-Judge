@@ -19,17 +19,14 @@ int main()
 	jiec[1]=1;
 	for(i=2;i<13;i++)
 		jiec[i]=i*jiec[i-1];
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		if(n==0)
 			break;
 		for(i=0;i<n;i++)
 			cin>>data[i];
-		for(i=1;i<n;i++)              //²åÈëÅÅÐò
-		{
+		for(i=1;i<n;i++) {              //²åÈëÅÅÐò
 			t=data[i];
-			for(j=i-1;j>=0;j--)
-			{
+			for(j=i-1;j>=0;j--) {
 				if(data[j]>t)
 					data[j+1]=data[j];
 				else
@@ -42,8 +39,7 @@ int main()
 		nore[0]=data[0];
 		num[0]=1;
 		j=1;
-		for(i=1;i<n;i++)
-		{
+		for(i=1;i<n;i++) {
 			if(data[i]!=data[i-1])
 				nore[j++]=data[i];
 			num[j-1]++;
@@ -59,10 +55,8 @@ int main()
 		temp=0;
 		for(i=0;i<j;i++)
 			temp=temp+num[i]*(nore[i]-'0');
-
 		j=0;
-		for(i=0;i<n;i++)
-		{
+		for(i=0;i<n;i++) {
 			num[i]=temp+j;
 			j=num[i]/10;
 			num[i]=num[i]%10;
@@ -70,8 +64,7 @@ int main()
 		i=n-1;
 		if(j>0)
 			cout<<j;
-		else
-		{
+		else {
 			for(i=n-1;i>=1;i--)
 				if(num[i]!=0)
 					break;

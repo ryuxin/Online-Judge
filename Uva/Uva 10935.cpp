@@ -31,8 +31,7 @@ int dequeue()
 int main()
 {
 	int n,i;
-	while(1)
-	{
+	while(1) {
 		cin>>n;
 		if(n==0)
 			break;
@@ -40,8 +39,7 @@ int main()
 		for(i=1;i<=n;i++)
 			enqueue(i);
 		cout<<"Discarded cards:";
-		while(c!=1)
-		{
+		while(c!=1) {
 			cout<<' '<<dequeue();
 			if(c!=1)
 				cout<<",";

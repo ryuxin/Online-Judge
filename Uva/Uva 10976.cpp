@@ -10,8 +10,7 @@ int store[10002];
 int main()
 {
 	int i,k,l;
-	while(cin>>k)
-	{
+	while(cin>>k) {
 		l=0;
 		for(i=k+1;i<=2*k;i++)
 			if(i*k%(i-k)==0)

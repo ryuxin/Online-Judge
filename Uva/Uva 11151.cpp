@@ -13,8 +13,7 @@ int main()
      int i,j,t,l,n;
      cin>>t;
      gets(data);
-     while(t--)
-     {
+     while(t--) {
 	  gets(data);
 	  n=strlen(data);
 	  for(i=0;i<n+1;i++)
@@ -22,10 +21,8 @@ int main()
 		    dp[i][j]=0;
 	  for(i=0;i<n+1;i++)
 	       dp[i][i]=1;
-	  for(l=2;l<=n;l++)
-	  {
-	       for(i=0;i<=n-l;i++)
-	       {
+	  for(l=2;l<=n;l++) {
+	       for(i=0;i<=n-l;i++) {
 		    if(data[i]==data[i+l-1])
 			 dp[i][i+l-1]=2+dp[i+1][i+l-2];
 		    else

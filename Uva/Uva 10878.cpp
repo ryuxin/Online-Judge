@@ -11,21 +11,18 @@ int main()
 {
 	int i,r,j;
 	gets(data);
-	while(1)
-	{
+	while(1)  {
 		gets(data);
 		if(strcmp(data,"___________")==0)
 			break;
 		r=0;
 		j=1;
-		for(i=9;i>6;i--)
-		{
+		for(i=9;i>6;i--) {
 			if(data[i]=='o')
 				r=r+j;
 			j=j*2;
 		}
-		for(i=5;i>0;i--)
-		{
+		for(i=5;i>0;i--) {
 			if(data[i]=='o')
 				r=r+j;
 			j=j*2;

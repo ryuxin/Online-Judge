@@ -31,19 +31,16 @@ int main()
 {
 	int n,i,l,j;
 	num=0;
-	while(gets(data))
-	{
+	while(gets(data)) {
 		l=strlen(data);
 		for(i=0;i<l;i++)
 			if(data[i]>='A'&&data[i]<='Z')
 				data[i]=data[i]-'A'+'a';
 		j=0;
-		for(i=0;i<=l;i++)
-		{
+		for(i=0;i<=l;i++) {
 			if(data[i]>='a'&&data[i]<='z')
 				temp[j++]=data[i];
-			else
-			{
+			else {
 				temp[j]='\0';
 				if(strcmp(temp,"")!=0)
 					Insert(temp);

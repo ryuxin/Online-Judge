@@ -12,14 +12,12 @@ int main()
 {
 	int i,j,n,c=0;
 	long long int m,t;
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		for(i=0;i<n;i++)
 			cin>>data[i];
 		c++;
 		max_p[0]=min_p[0]=data[0];
-		for(i=1;i<n;i++)
-		{
+		for(i=1;i<n;i++) {
 			max_p[i]=data[i]>data[i]*max_p[i-1]?data[i]:data[i]*max_p[i-1];
 			max_p[i]=max_p[i]>data[i]*min_p[i-1]?max_p[i]:min_p[i-1]*data[i];
 			min_p[i]=data[i]<data[i]*max_p[i-1]?data[i]:data[i]*max_p[i-1];
