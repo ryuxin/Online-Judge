@@ -62,7 +62,7 @@ int main()
             for(j=0; j<n; j++)
                 grap[i][j] = Calc(i, j);
         memset(dp, 0, n*sizeof(int));
-	memset(p, -1, n*sizeof(int));
+		memset(p, -1, n*sizeof(int));
         mv = DP(0);
         mp = 0;
         for(i=1; i<n; i++)
