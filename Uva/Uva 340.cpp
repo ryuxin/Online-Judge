@@ -39,15 +39,10 @@ int main()
 				mfin[i]=gfin[i]=false;
 			if(g[0]==0)
 				break;
-<<<<<<< HEAD
 			for(i=0;i<n;i++)                //æ‰¾å‡ºæ‰€å¼ºåŒ¹é…
 			{
 				if(m[i]==g[i])
 				{
-=======
-			for(i=0;i<n;i++) {                   //ÕÒ³öËùÇ¿Æ¥Åä
-				if(m[i]==g[i]) {
->>>>>>> fc2edba1fb305ea03509f3c98074c3a1834cf7a7
 					rs++;
 					mfin[i]=gfin[i]=true;
 				}

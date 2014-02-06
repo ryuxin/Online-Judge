@@ -51,7 +51,6 @@ void Print(int a)
 }
 int main()
 {
-<<<<<<< HEAD
 	int i, j, mv, mp;
 	while(scanf("%d %d", &n, &k)>0) {
 		for(i=0; i<n; i++) {
@@ -76,30 +75,4 @@ int main()
 		printf("\n");
 	}
 	return 0;
-=======
-    int i, j, mv, mp;
-    while(scanf("%d %d", &n, &k)>0) {
-        for(i=0; i<n; i++) {
-            for(j=0; j<k; j++)
-                scanf("%d", &ver[i][j]);
-            qsort(ver[i], k, sizeof(int), comp);
-        }
-        for(i=0; i<n; i++)
-            for(j=0; j<n; j++)
-                grap[i][j] = Calc(i, j);
-        memset(dp, 0, n*sizeof(int));
-		memset(p, -1, n*sizeof(int));
-        mv = DP(0);
-        mp = 0;
-        for(i=1; i<n; i++)
-            if(DP(i)>mv) {
-                mv = dp[i];
-                mp = i;
-            }
-        printf("%d\n", mv);
-        Print(mp);
-        printf("\n");
-    }
-    return 0;
->>>>>>> fc2edba1fb305ea03509f3c98074c3a1834cf7a7
 }
