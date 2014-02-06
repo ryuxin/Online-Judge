@@ -24,7 +24,11 @@ int main()
 			qsort(code,i,sizeof(code[0]),comp);
 			for(j=0;j<i-1;j++) {
 				for(k=j+1;k<i;k++) {
+<<<<<<< HEAD
 					//!!蹇呴』鏄墠缂�锛屼篃灏辨槸璧峰鐩稿悓鐨勪綅缃繀椤诲湪寮�濮嬪
+=======
+					//!!必须是前缀，也就是起始相同的位置必须在开始处
+>>>>>>> fc2edba1fb305ea03509f3c98074c3a1834cf7a7
 					if(strstr(code[k],code[j])==code[k]) {
 						re=false;
 						break;

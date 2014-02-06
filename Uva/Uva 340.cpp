@@ -24,16 +24,14 @@ bool mfin[Len],gfin[Len];
 int main()
 {
 	int rt,rs,i,j,n,c=0;
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		if(n==0)
 			break;
 		c++;
 		for(i=0;i<n;i++)
 			cin>>m[i];
 		cout<<"Game "<<c<<":"<<endl;
-		while(1)
-		{
+		while(1) {
 			rs=rt=0;
 			for(i=0;i<n;i++)
 				cin>>g[i];
@@ -41,10 +39,15 @@ int main()
 				mfin[i]=gfin[i]=false;
 			if(g[0]==0)
 				break;
+<<<<<<< HEAD
 			for(i=0;i<n;i++)                //æ‰¾å‡ºæ‰€å¼ºåŒ¹é…
 			{
 				if(m[i]==g[i])
 				{
+=======
+			for(i=0;i<n;i++) {                   //ÕÒ³öËùÇ¿Æ¥Åä
+				if(m[i]==g[i]) {
+>>>>>>> fc2edba1fb305ea03509f3c98074c3a1834cf7a7
 					rs++;
 					mfin[i]=gfin[i]=true;
 				}
@@ -52,8 +55,7 @@ int main()
 			for(i=0;i<n;i++)
 				if(mfin[i]==false)
 					for(j=0;j<n;j++)
-						if(gfin[j]==false&&g[j]==m[i])
-						{
+						if(gfin[j]==false&&g[j]==m[i]) {
 							rt++;
 							gfin[j]=mfin[i]=true;
 							break;

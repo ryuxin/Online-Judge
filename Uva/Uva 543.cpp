@@ -10,6 +10,7 @@ bool check[Len]={0};
 int sushu[Len/2];
 int Shaifa(void)
 {
+<<<<<<< HEAD
 	int i,l=0,j;
 	for(i=2;i<Len;i++) {
 		if(check[i]==false) {
@@ -25,6 +26,23 @@ int main()
 	int n,i,l,r;
 	l=Shaifa();
 	while(1) {
+=======
+    int i,l=0,j;
+    for(i=2;i<Len;i++) {
+		if(check[i]==false) {
+			for(j=i+i;j<Len;j=j+i)
+				check[j]=true;
+	       sushu[l++]=i;
+		}
+	}
+    return l;
+}
+int main()
+{ 
+    int n,i,l,r;
+    l=Shaifa();
+    while(1) {
+>>>>>>> fc2edba1fb305ea03509f3c98074c3a1834cf7a7
 		cin>>n;
 		r=0;
 		if(n==0)

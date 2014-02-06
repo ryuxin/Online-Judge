@@ -12,11 +12,9 @@ int main()
 	char c;
 	int i,l,j;
 	StingtoBigNum(mint,&m);
-	while(gets(data))
-	{
+	while(gets(data)) {
 		l=strlen(data);
-		for(i=0;i<l;i++)
-		{
+		for(i=0;i<l;i++) {
 			if(data[i]>'9'||data[i]<'0')
 				break;
 			s1[i]=data[i];
