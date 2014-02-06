@@ -1,5 +1,5 @@
-/*Ã¶¾Ù£¬Èç¹ûÃ¶¾ÙËùÓĞÅÅÁĞ£¬»á³¬Ê±¡£Ö»ĞèÃ¶¾Ù·Ö×Ó¡£µ±·Ö×Ó¿ÉÒÔÕû³ın£¬ÇÒ·Ö×Ó·ÖÄ¸¹¹³ÉÒ»¸öÈ«ÅÅÁĞÊ±,
-Âú×ãÌâÒâ¡£×îºóÃ»ÓĞ¶àÓàµÄ¿ÕĞĞ*/
+/*æšä¸¾ï¼Œå¦‚æœæšä¸¾æ‰€æœ‰æ’åˆ—ï¼Œä¼šè¶…æ—¶ã€‚åªéœ€æšä¸¾åˆ†å­ã€‚å½“åˆ†å­å¯ä»¥æ•´é™¤nï¼Œä¸”åˆ†å­åˆ†æ¯æ„æˆä¸€ä¸ªå…¨æ’åˆ—æ—¶,
+  æ»¡è¶³é¢˜æ„ã€‚æœ€åæ²¡æœ‰å¤šä½™çš„ç©ºè¡Œ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -12,15 +12,13 @@ bool Check(int a,int b)
 	int i;
 	for(i=0;i<10;i++)
 		used[i]=false;
-	while(a>0)
-	{
+	while(a>0) {
 		if(used[a%10]==true)
-			return false;               //ÓĞÖØ¸´
+			return false;              //æœ‰é‡å¤
 		used[a%10]=true;
 		a=a/10;
 	}
-	while(b>0)
-	{
+	while(b>0) {
 		if(used[b%10]==true)
 			return false;
 		used[b%10]=true;
@@ -28,15 +26,14 @@ bool Check(int a,int b)
 	}
 	for(i=1;i<10;i++)
 		if(used[i]==false)
-			return false;               //ÓĞÒÅÂ©
+			return false;                //æœ‰é—æ¼
 	return true;
 }
 int main()
 {
 	int i,n;
 	bool re,first=true;
-	while(cin>>n)
-	{
+	while(cin>>n) {
 		if(n==0)
 			break;
 		if(first==true)
@@ -44,12 +41,9 @@ int main()
 		else
 			cout<<endl;
 		re=false;
-		for(i=10234;i<=98765;i++)
-		{
-			if(i%n==0)
-			{
-				if(Check(i,i/n))
-				{
+		for(i=10234;i<=98765;i++) {
+			if(i%n==0) {
+				if(Check(i,i/n)) {
 					printf("%d / %05d = %d\n",i,i/n,n);
 					re=true;
 				}

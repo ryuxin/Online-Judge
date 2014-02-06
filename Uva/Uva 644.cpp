@@ -1,4 +1,4 @@
-//»Î√≈Ã‚°£
+/*ÂÖ•Èó®È¢ò„ÄÇ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -17,20 +17,15 @@ int main()
 	int i,j,k,c=0;
 	bool re;
 	i=0;
-	while(cin>>code[i])
-	{
-		if(code[i][0]=='9')
-		{
+	while(cin>>code[i]) {
+		if(code[i][0]=='9') {
 			c++;
 			re=true;
 			qsort(code,i,sizeof(code[0]),comp);
-			for(j=0;j<i-1;j++)
-			{
-				for(k=j+1;k<i;k++)
-				{
-					//!!±ÿ–Î ««∞◊∫£¨“≤æÕ «∆ ºœ‡Õ¨µƒŒª÷√±ÿ–Î‘⁄ø™ º¥¶
-					if(strstr(code[k],code[j])==code[k])
-					{
+			for(j=0;j<i-1;j++) {
+				for(k=j+1;k<i;k++) {
+					//!!ÂøÖÈ°ªÊòØÂâçÁºÄÔºå‰πüÂ∞±ÊòØËµ∑ÂßãÁõ∏ÂêåÁöÑ‰ΩçÁΩÆÂøÖÈ°ªÂú®ÂºÄÂßãÂ§Ñ
+					if(strstr(code[k],code[j])==code[k]) {
 						re=false;
 						break;
 					}

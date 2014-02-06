@@ -1,7 +1,7 @@
-/*�����⡣������������ö��η�����⣬�����ھ������⣬̫�����ˣ�������ʵʵ��ģ���ˡ�
-���⣬Ҫ������Ŀ����˼���Լ����������
-1.ֻ�е��߶��ϸ���ھ��ĸ߶�ʱ������ɹ���ͬ�������½���ĸ߶��ϸ�С��0ʱ������ʧ�ܡ�
-2.��ÿ�������ĸ߶ȼ�С��0�Ժ󣬾�һֱ��0.����˵������������һ��������*/
+/*入门题。此题最好是利用二次方程求解，但由于精度问题，太恶心了，就老老实实的模拟了。
+  另外，要明白题目的意思，以及特殊情况。
+  1.只有当高度严格大于井的高度时，才算成功。同理，当下降后的高度严格小于0时，才算失败。
+  2.当每天上升的高度减小到0以后，就一直是0.就是说，不会向上爬一个负数。*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -11,12 +11,12 @@
 using namespace std;
 int main()
 {
-    double h, u, d, f, c;
+	double h, u, d, f, c;
 	int t;
-    while(scanf("%lf %lf %lf %lf", &h, &u, &d, &f)>0) {
-        if(h == 0)
-            break;
-        f = u*f/100;
+	while(scanf("%lf %lf %lf %lf", &h, &u, &d, &f)>0) {
+		if(h == 0)
+			break;
+		f = u*f/100;
 		t = 1;
 		c = 0;
 		while(1) {
@@ -35,7 +35,7 @@ int main()
 				u = 0;
 			t++;
 		}
-    }
-    return 0;
+	}
+	return 0;
 }
 

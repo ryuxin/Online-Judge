@@ -1,6 +1,6 @@
-/*����+���ݡ���ĳһ�У�����ö�������У�ȷ���Ƿ���Է����ӡ�����һ���㣨x��y��������Ƶ����ҶԽ���,����
-y��Ľؾ�ֱ��ʾΪleft[y+x]��right[y-x+8]
-ע�⣬���ʱ�ǰ����������Ҫ����,���û�п���*/
+/*深搜+回溯。对某一行，依次枚举所有列，确定是否可以放棋子。对于一个点（x，y），其控制的左右对角线,根据
+  y轴的截距分别表示为left[y+x]，right[y-x+8]
+  注意，输出时是按列输出，且要对齐,最后没有空行*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -14,8 +14,7 @@ int re[9],c,x,y;
 void DFS(int r)
 {
 	int i;
-	if(r==9)
-	{
+	if(r==9) {
 		c++;
 		printf("%2d     ",c);
 		for(i=1;i<9;i++)
@@ -24,8 +23,7 @@ void DFS(int r)
 	}
 	if(r==x)
 		DFS(r+1);
-	else
-	{
+	else {
 		for(i=1;i<9;i++)
 		{
 			if(row[i]&&left[r+i]&&right[i-r+8])
@@ -42,8 +40,7 @@ int main()
 {
 	int t,i;
 	cin>>t;
-	while(t--)
-	{
+	while(t--) {
 		cin>>y>>x;
 		for(i=0;i<9;i++)
 			row[i]=true;

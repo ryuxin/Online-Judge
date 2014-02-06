@@ -1,6 +1,6 @@
-//ÈëÃÅÌâ¡£×Ö·û´®´¦Àí,¶þ²æÊ÷±éÀú¡£»ù±¾Ë¼Â·ÊÇ£¬¶ÔÊäÈëµÄ½Úµã½øÐÐ½âÎö£¬ÌáÈ¡³ö½ÚµãÖµºÍÔÚÊ÷ÖÐµÄÂ·¾¶£¬
-//È»ºó¸ù¾ÝÂ·¾¶£¬½«½Úµã²åÈëÊ÷£¬´Ó¶ø¹¹½¨Õû¸ö¶þ²æÊ÷£¬²¢Í¬Ê±¼ìÑéÊÇ·ñÓÐÖØ¸´½Úµã¡£×îºó¼ìÑéÊÇ·ñÊÇÒ»¸öÍêÕû
-//µÄÊ÷£¬ÈôÊÇ£¬Ôò¿íËÑÊä³ö¡£
+/*å…¥é—¨é¢˜ã€‚å­—ç¬¦ä¸²å¤„ç†,äºŒå‰æ ‘éåŽ†ã€‚åŸºæœ¬æ€è·¯æ˜¯ï¼Œå¯¹è¾“å…¥çš„èŠ‚ç‚¹è¿›è¡Œè§£æžï¼Œæå–å‡ºèŠ‚ç‚¹å€¼å’Œåœ¨æ ‘ä¸­çš„è·¯å¾„ï¼Œ
+  ç„¶åŽæ ¹æ®è·¯å¾„ï¼Œå°†èŠ‚ç‚¹æ’å…¥æ ‘ï¼Œä»Žè€Œæž„å»ºæ•´ä¸ªäºŒå‰æ ‘ï¼Œå¹¶åŒæ—¶æ£€éªŒæ˜¯å¦æœ‰é‡å¤èŠ‚ç‚¹ã€‚æœ€åŽæ£€éªŒæ˜¯å¦æ˜¯ä¸€ä¸ªå®Œæ•´ 
+  çš„æ ‘ï¼Œè‹¥æ˜¯ï¼Œåˆ™å®½æœè¾“å‡ºã€‚*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -11,11 +11,11 @@ char node[300];
 int v[300],leftnode[300],rightnode[300],queue[150];
 int value,start,end,root,freelist,head,tail;
 bool correct;
-void Initial(void);              //¶Ô¶þ²æÊ÷½øÐÐ³õÊ¼»¯
-void Passer(char *);             //½âÎöÊäÈëµÄ½Úµã
-bool Constrct(void);             //¸ù¾Ý½âÎöºóµÄ½á¹û£¬¹¹½¨¶þ²æÊ÷£¬Í¬Ê±¼ìÑéÊÇ·ñÓÐÖØ¸´µÄ½Úµã
-bool Check(void);                //¼ìÑé¶þ²æÊ÷ÊÇ·ñÊÇÒ»¸öÍêÕûµÄÊ÷
-void Output(bool);               //½øÐÐ¿íËÑ£¬Êä³ö¶þ²æÊ÷
+void Initial(void);         //å¯¹äºŒå‰æ ‘è¿›è¡Œåˆå§‹åŒ–
+void Passer(char *);        //è§£æžè¾“å…¥çš„èŠ‚ç‚¹
+bool Constrct(void);        //æ ¹æ®è§£æžåŽçš„ç»“æžœï¼Œæž„å»ºäºŒå‰æ ‘ï¼ŒåŒæ—¶æ£€éªŒæ˜¯å¦æœ‰é‡å¤çš„èŠ‚ç‚¹
+bool Check(void);           //æ£€éªŒäºŒå‰æ ‘æ˜¯å¦æ˜¯ä¸€ä¸ªå®Œæ•´çš„æ ‘
+void Output(bool);          //è¿›è¡Œå®½æœï¼Œè¾“å‡ºäºŒå‰æ ‘
 void Initial(void)
 {
 	int i;

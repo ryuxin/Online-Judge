@@ -1,7 +1,7 @@
 /*
-ËÑË÷£¬ÉîËÑ»ØËİ¡£¼ÇÂ¼µ±Ç°ÒÑ·¢ÏÖµÄ×îÉÙ²½Êıbest£¬Ö»ÓĞÒÑÖ´ĞĞµÄ²½ÊıĞ¡ÓÚbesÊ±£¬²ÅÀ©Õ¹µ±Ç°½Úµã¡£ÁíÍâ£¬Éèµ±Ç°
-Õ»ÖĞÓĞs¸öÔªËØ£¬ÔòÖÁÉÙ»¹Òªs-1²½²Å¿ÉÄÜ»ñµÃÊä³ö£¬ËùÒÔµ±Ç°½ÚµãÖÁÉÙĞèÒªcur+s-1²½£¬µ±´Ë>=bestÊ±£¬Ò²ÎŞĞèÀ©Õ¹
-µ±Ç°½Úµã¡£ÁíÍâ£¬»ØËİÇ°ºóÒª¼°Ê±±£´æºÍ»Ø¸´×´Ì¬£¡£¡
+  æœç´¢ï¼Œæ·±æœå›æº¯ã€‚è®°å½•å½“å‰å·²å‘ç°çš„æœ€å°‘æ­¥æ•°bestï¼Œåªæœ‰å·²æ‰§è¡Œçš„æ­¥æ•°å°äºbesæ—¶ï¼Œæ‰æ‰©å±•å½“å‰èŠ‚ç‚¹ã€‚å¦å¤–ï¼Œè®¾å½“å‰
+  æ ˆä¸­æœ‰sä¸ªå…ƒç´ ï¼Œåˆ™è‡³å°‘è¿˜è¦s-1æ­¥æ‰å¯èƒ½è·å¾—è¾“å‡ºï¼Œæ‰€ä»¥å½“å‰èŠ‚ç‚¹è‡³å°‘éœ€è¦cur+s-1æ­¥ï¼Œå½“æ­¤>=bestæ—¶ï¼Œä¹Ÿæ— éœ€æ‰©å±•
+  å½“å‰èŠ‚ç‚¹ã€‚å¦å¤–ï¼Œå›æº¯å‰åè¦åŠæ—¶ä¿å­˜å’Œå›å¤çŠ¶æ€ï¼ï¼
 */
 #include <iostream>
 #include <stdlib.h>
@@ -17,9 +17,9 @@ using namespace std;
 int exe_stack[10][14], stack_top, data_in[12], data_out[12];
 int ins[11], best_ins[11], best_step, n;
 char opera[5][6]={"ADD","DIV","DUP","MUL","SUB"};
-bool Check_finish(void);        //ÅĞ¶Ïµ±Ç°ÊÇ·ñÒÑµÃµ½ËùÓĞÊä³ö
-bool Check_val(int a);          //ÅĞ¶ÏÖ¸ÁîaÊÇ·ñÊÊºÏËùÓĞ³ÌĞò
-void Exe_ins(int a);            //¶ÔËùÓĞ³ÌĞòÖ´ĞĞÖ¸Áîa
+bool Check_finish(void);        //åˆ¤æ–­å½“å‰æ˜¯å¦å·²å¾—åˆ°æ‰€æœ‰è¾“å‡º
+bool Check_val(int a);          //åˆ¤æ–­æŒ‡ä»¤aæ˜¯å¦é€‚åˆæ‰€æœ‰ç¨‹åº
+void Exe_ins(int a);            //å¯¹æ‰€æœ‰ç¨‹åºæ‰§è¡ŒæŒ‡ä»¤a
 bool Check_finish(void)
 {
 	int i;
@@ -41,33 +41,33 @@ bool Check_val(int a)
 			if(a==DIV && exe_stack[i][stack_top-1]==0)
 				return false;
 		switch (a) {
-			case ADD:
-				for(i=0;i<n;i++) { 
-					t=exe_stack[i][stack_top-1]+exe_stack[i][stack_top-2];
-					if(t>30000||t<-30000)
-						return false;
-				}
-				break;
-			case SUB:
-				for(i=0;i<n;i++) { 
-					t=exe_stack[i][stack_top-2]-exe_stack[i][stack_top-1];
-					if(t>30000||t<-30000)
-						return false;
-				}
-				break;
-			case MUL:
-				for(i=0;i<n;i++) { 
-					t=exe_stack[i][stack_top-1]*exe_stack[i][stack_top-2];
-					if(t>30000||t<-30000)
-						return false;
-				}
-				break;
-			case DIV:
-				for(i=0;i<n;i++) { 
-					t=exe_stack[i][stack_top-2]/exe_stack[i][stack_top-1];
-					if(t>30000||t<-30000)
-						return false;
-				}
+		case ADD:
+			for(i=0;i<n;i++) { 
+				t=exe_stack[i][stack_top-1]+exe_stack[i][stack_top-2];
+				if(t>30000||t<-30000)
+					return false;
+			}
+			break;
+		case SUB:
+			for(i=0;i<n;i++) { 
+				t=exe_stack[i][stack_top-2]-exe_stack[i][stack_top-1];
+				if(t>30000||t<-30000)
+					return false;
+			}
+			break;
+		case MUL:
+			for(i=0;i<n;i++) { 
+				t=exe_stack[i][stack_top-1]*exe_stack[i][stack_top-2];
+				if(t>30000||t<-30000)
+					return false;
+			}
+			break;
+		case DIV:
+			for(i=0;i<n;i++) { 
+				t=exe_stack[i][stack_top-2]/exe_stack[i][stack_top-1];
+				if(t>30000||t<-30000)
+					return false;
+			}
 		}
 	}
 	return true;
@@ -76,38 +76,38 @@ void Exe_ins(int a)
 {
 	int i,t;
 	switch (a) {
-		case ADD:
-			for(i=0;i<n;i++) { 
-				t=exe_stack[i][stack_top-1] + exe_stack[i][stack_top-2];
-				exe_stack[i][stack_top-2]=t;
-			}
-			stack_top--;
-			break;
-		case SUB:
-			for(i=0;i<n;i++) { 
-				t=exe_stack[i][stack_top-2] - exe_stack[i][stack_top-1];
-				exe_stack[i][stack_top-2]=t;
-			}
-			stack_top--;
-			break;
-		case MUL:
-			for(i=0;i<n;i++) { 
-				t=exe_stack[i][stack_top-1] * exe_stack[i][stack_top-2];
-				exe_stack[i][stack_top-2]=t;
-			}
-			stack_top--;
-			break;
-		case DIV:
-			for(i=0;i<n;i++) { 
-				t=exe_stack[i][stack_top-2] / exe_stack[i][stack_top-1];
-				exe_stack[i][stack_top-2]=t;
-			}
-			stack_top--;
-			break;
-		case DUP:
-			for(i=0;i<n;i++) 
-				exe_stack[i][stack_top]=exe_stack[i][stack_top-1];
-			stack_top++;
+	case ADD:
+		for(i=0;i<n;i++) { 
+			t=exe_stack[i][stack_top-1] + exe_stack[i][stack_top-2];
+			exe_stack[i][stack_top-2]=t;
+		}
+		stack_top--;
+		break;
+	case SUB:
+		for(i=0;i<n;i++) { 
+			t=exe_stack[i][stack_top-2] - exe_stack[i][stack_top-1];
+			exe_stack[i][stack_top-2]=t;
+		}
+		stack_top--;
+		break;
+	case MUL:
+		for(i=0;i<n;i++) { 
+			t=exe_stack[i][stack_top-1] * exe_stack[i][stack_top-2];
+			exe_stack[i][stack_top-2]=t;
+		}
+		stack_top--;
+		break;
+	case DIV:
+		for(i=0;i<n;i++) { 
+			t=exe_stack[i][stack_top-2] / exe_stack[i][stack_top-1];
+			exe_stack[i][stack_top-2]=t;
+		}
+		stack_top--;
+		break;
+	case DUP:
+		for(i=0;i<n;i++) 
+			exe_stack[i][stack_top]=exe_stack[i][stack_top-1];
+		stack_top++;
 	}
 	return ;
 }
@@ -176,16 +176,16 @@ int main()
 		best_step=11;
 		Backtrace(0);
 		switch (best_step) {
-			case 0:
-				printf("Empty sequence\n\n");
-				break;
-			case 11:
-				printf("Impossible\n\n");
-				break;
-			default :
-				for(i=0;i<best_step-1;i++)
-					printf("%s ", opera[best_ins[i]]);
-				printf("%s\n\n", opera[best_ins[i]]);
+		case 0:
+			printf("Empty sequence\n\n");
+			break;
+		case 11:
+			printf("Impossible\n\n");
+			break;
+		default :
+			for(i=0;i<best_step-1;i++)
+				printf("%s ", opera[best_ins[i]]);
+			printf("%s\n\n", opera[best_ins[i]]);
 		}
 	}
 	return 0;

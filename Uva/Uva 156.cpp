@@ -1,6 +1,6 @@
-/*»ù´¡Ìâ¡£ÎªÃ¿¸öµ¥´Ê¶¨ÒåÒ»¸ö±ê×¼ĞÍ£º¼´ËùÓĞ×Ö·û¶¼ÊÇĞ¡Ğ´£¬ÇÒÒÑÅÅºÃĞò¡£ÔòÁ½¸öµ¥´ÊÈôÊÇ¿É×ª»»µÄ£¬ÔòËûÃÇ
-±ØÓĞÏàÍ¬µÄ±ê×¼ĞÍ¡£½«Ã¿¸öµ¥´Ê¶¼×ª»»Îª±ê×¼ĞÍ£¬²¢°´ÆäÅÅĞò¡£É¨ÃèÅÅĞòºóĞòÁĞ£¬Ö»ÓĞÖ»³öÏÖÒ»´ÎµÄ±ê×¼ĞÍËù¶Ô
-Ó¦µÄµ¥´ÊÂú×ãÌâÒâ£¬½«ÕâÑùµÄµ¥´ÊÕÒµ½ºó£¬ÔÙÅÅĞò£¬¼´Îª×îÖÕ½á¹û*/
+/*åŸºç¡€é¢˜ã€‚ä¸ºæ¯ä¸ªå•è¯å®šä¹‰ä¸€ä¸ªæ ‡å‡†å‹ï¼šå³æ‰€æœ‰å­—ç¬¦éƒ½æ˜¯å°å†™ï¼Œä¸”å·²æ’å¥½åºã€‚åˆ™ä¸¤ä¸ªå•è¯è‹¥æ˜¯å¯è½¬æ¢çš„ï¼Œåˆ™ä»–ä»¬
+  å¿…æœ‰ç›¸åŒçš„æ ‡å‡†å‹ã€‚å°†æ¯ä¸ªå•è¯éƒ½è½¬æ¢ä¸ºæ ‡å‡†å‹ï¼Œå¹¶æŒ‰å…¶æ’åºã€‚æ‰«ææ’åºååºåˆ—ï¼Œåªæœ‰åªå‡ºç°ä¸€æ¬¡çš„æ ‡å‡†å‹æ‰€å¯¹
+  åº”çš„å•è¯æ»¡è¶³é¢˜æ„ï¼Œå°†è¿™æ ·çš„å•è¯æ‰¾åˆ°åï¼Œå†æ’åºï¼Œå³ä¸ºæœ€ç»ˆç»“æœ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -8,62 +8,62 @@
 #include <stdio.h>
 using namespace std;
 struct Dic {
-    char org[25], trans[25];
+	char org[25], trans[25];
 };
 Dic data[1002];
 int comp1(const void *a1, const void *a2)
 {
-    char *p1, *p2;
-    p1 = (char *)a1;
-    p2 = (char *)a2;
-    return (*p1)-(*p2);
+	char *p1, *p2;
+	p1 = (char *)a1;
+	p2 = (char *)a2;
+	return (*p1)-(*p2);
 }
 int comp2(const void *a1, const void *a2)
 {
-    Dic *p1, *p2;
-    p1 = (Dic *)a1;
-    p2 = (Dic *)a2;
-    return strcmp(p1->trans,p2->trans);
+	Dic *p1, *p2;
+	p1 = (Dic *)a1;
+	p2 = (Dic *)a2;
+	return strcmp(p1->trans,p2->trans);
 }
 int comp3(const void *a1, const void *a2)
 {
-    Dic *p1, *p2;
-    p1 = (Dic *)a1;
-    p2 = (Dic *)a2;
-    return strcmp(p1->org,p2->org);
+	Dic *p1, *p2;
+	p1 = (Dic *)a1;
+	p2 = (Dic *)a2;
+	return strcmp(p1->org,p2->org);
 }
 int main()
 {
-    int i, n, l, j;
-    n = 0;
-    while(1) {
-        cin>>data[n].org;
-        if(strcmp(data[n].org,"#") == 0)
-            break;
-        strcpy(data[n].trans,data[n].org);
-		//transÎª±ê×¼ĞÍ
-        l = strlen(data[n].trans);
-        for(i=0; i<l; i++)
-            if(data[n].trans[i]>='A' && data[n].trans[i]<='Z')
-                data[n].trans[i] = data[n].trans[i]-'A'+'a';
-        qsort(data[n].trans,l,sizeof(char),comp1);
-        n++;
-    }
-    qsort(data,n,sizeof(data[0]),comp2);
-    data[n].trans[0]='\0';
-    l = 0;
-    for(i=0;i<n;) {
-        for(j=i+1; j<=n;j++) {
-            if(strcmp(data[i].trans, data[j].trans) != 0)
-                break;
-        }
-        if(i == j-1)             //¸Ã±ê×¼ĞÍÖ»³öÏÖÒ»´Î
-            data[l++] = data[i];
-        i = j;
-    }
-    qsort(data, l, sizeof(data[0]),comp3);
-    for(i=0;i<l;i++)
-        printf("%s\n",data[i].org);
+	int i, n, l, j;
+	n = 0;
+	while(1) {
+		cin>>data[n].org;
+		if(strcmp(data[n].org,"#") == 0)
+			break;
+		strcpy(data[n].trans,data[n].org);
+		//transä¸ºæ ‡å‡†å‹
+		l = strlen(data[n].trans);
+		for(i=0; i<l; i++)
+			if(data[n].trans[i]>='A' && data[n].trans[i]<='Z')
+				data[n].trans[i] = data[n].trans[i]-'A'+'a';
+		qsort(data[n].trans,l,sizeof(char),comp1);
+		n++;
+	}
+	qsort(data,n,sizeof(data[0]),comp2);
+	data[n].trans[0]='\0';
+	l = 0;
+	for(i=0;i<n;) {
+		for(j=i+1; j<=n;j++) {
+			if(strcmp(data[i].trans, data[j].trans) != 0)
+				break;
+		}
+		if(i == j-1)             //è¯¥æ ‡å‡†å‹åªå‡ºç°ä¸€æ¬¡
+			data[l++] = data[i];
+		i = j;
+	}
+	qsort(data, l, sizeof(data[0]),comp3);
+	for(i=0;i<l;i++)
+		printf("%s\n",data[i].org);
 	return 0;
 }
 

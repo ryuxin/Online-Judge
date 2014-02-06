@@ -1,4 +1,4 @@
-//入门题。字符串处理
+/*鍏ラ棬棰樸�傚瓧绗︿覆澶勭悊*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

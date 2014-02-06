@@ -1,4 +1,4 @@
-/*典型题。详见算法导论Young矩阵*/
+/*鍏稿瀷棰樸�傝瑙佺畻娉曞璁篩oung鐭╅樀*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

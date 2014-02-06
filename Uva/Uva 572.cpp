@@ -1,4 +1,4 @@
-//ÈëÃÅÌâ.ÉîËÑ¡£ÒÀ´ÎÉ¨ÃèÃ¿Ò»¸ö½Úµã£¬·¢ÏÖÒ»¸ö@½ÚµãÊ±£¬ÒÔËûÎª¸ù½øÐÐÉîËÑ£¬½«ÓëÆäÏàÁÚµÄ¶¼±êÎª*£¬¼ÆÊý¼ÓÒ»
+/*å…¥é—¨é¢˜.æ·±æœã€‚ä¾æ¬¡æ‰«ææ¯ä¸€ä¸ªèŠ‚ç‚¹ï¼Œå‘çŽ°ä¸€ä¸ª@èŠ‚ç‚¹æ—¶ï¼Œä»¥ä»–ä¸ºæ ¹è¿›è¡Œæ·±æœï¼Œå°†ä¸Žå…¶ç›¸é‚»çš„éƒ½æ ‡ä¸º*ï¼Œè®¡æ•°åŠ ä¸€*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -19,8 +19,7 @@ void DFS(int x,int y)
 int main()
 {
 	int m,n,r,i,j;
-	while(cin>>m>>n)
-	{
+	while(cin>>m>>n) {
 		if(m==0)
 			break;
 		for(i=1;i<=m;i++)
@@ -32,10 +31,8 @@ int main()
 			data[0][i]=data[m+1][i]='*';
 		r=0;
 		for(i=1;i<=m;i++)
-			for(j=1;j<=n;j++)
-			{
-				if(data[i][j]=='@')
-				{
+			for(j=1;j<=n;j++) {
+				if(data[i][j]=='@') {
 					DFS(i,j);
 					r++;
 				}

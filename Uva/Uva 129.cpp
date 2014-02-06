@@ -1,7 +1,7 @@
 /*
-�����⡣���ѡ���ÿ��λ�ã�����ö�����п��ܵ���ĸ��������Ҫ�󣬼������������ظ��Ӵ�ʱ��
-�ݹ�������һ��λ�ã��������һ��ֱ���ﵽ��Ҫ��Ľ�������жϵ�ǰ�ַ���s[1��n]�Ƿ�����Ҫ��ʱ��
-�����ǵݹ����ò㣬����s[1��n-1]һ����������������ֻ���ж��Ƿ���ڰ���s[n]�������ظ��Ӵ���
+  基础题。深搜。对每个位置，依次枚举所有可能的字母。当满足要求，即不出现连续重复子串时，
+  递归搜索下一个位置，结果数加一，直到达到所要求的结果数。判断当前字符串s[1…n]是否满足要求时，
+  由于是递归进入该层，所以s[1…n-1]一定满足条件，所以只需判断是否存在包含s[n]的连续重复子串。
 */
 #include <iostream>
 #include <stdlib.h>
@@ -11,17 +11,17 @@
 using namespace std; 
 char data[90];
 int n,k,r;
-bool Check_repeat(char *a, int l)     //�ַ���a�Ƿ������a[l]��β���ظ��ִ�
+bool Check_repeat(char *a, int l)       //字符串a是否包含以a[l]结尾的重复字串
 {
 	int i=l-1,j;
 	while(i>=l/2) {
-		if(a[i]==a[l]) {              //ǰһ���Ӵ�����Ҳ��a[l]��β
+		if(a[i]==a[l]) {               //前一个子串必须也以a[l]结尾
 			for(j=2*i+1-l;j<i;j++)
 				if(a[j]!=a[j-i+l])
 					break;
 			if(j==i)
 				return true;
-			i=i-2;                    //��a[i]=a[l]����a[i-1]!=a[l]
+			i=i-2;                    //若a[i]=a[l]，则a[i-1]!=a[l]
 		}
 		else
 			i=i-1;

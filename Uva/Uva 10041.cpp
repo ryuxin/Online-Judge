@@ -1,4 +1,4 @@
-/*�����⡣���kС������Ҫʹ��ÿ����ľ���֮����С��ֻ��ѡȡ��Щ����м�λ�ã����������е���λ����*/
+/*基础题。求第k小的数。要使到每个点的距离之和最小，只能选取这些点的中间位置，即输入序列的中位数*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -31,7 +31,7 @@ int Parition(int l, int r)
     data[j] = t;
     return j;
 }
-int Select(int l, int r, int k)      //��l��r�������ڣ��ҵ���kС����
+int Select(int l, int r, int k)      //ÔÚlµœrµÄÇøŒäÄÚ£¬ÕÒµœµÚkÐ¡µÄÊý
 {
     int p;
     p = Parition(l, r);

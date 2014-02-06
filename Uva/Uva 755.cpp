@@ -1,6 +1,4 @@
-/*
-ÈëÃÅÌâ ×îºóÒ»×éÃ»ÓĞ¿ÕĞĞ
-*/
+/*å…¥é—¨é¢˜ æœ€åä¸€ç»„æ²¡æœ‰ç©ºè¡Œ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -76,6 +74,6 @@ int main()
 		if(l == 0)
 			printf("No duplicates.\n");
 	}
-    return 0;
+	return 0;
 }
 

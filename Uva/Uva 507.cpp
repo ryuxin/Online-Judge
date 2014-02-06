@@ -1,20 +1,20 @@
-/*ÈëÃÅÌâ¡£¶¯¹æ¡£×ªÒÆ·½³Ì dp[i]=max{dp[i], dp[i]+dp[i-1]}¡£ÁíÍâ£¬±¾ÌâÒªÇóÊä³öÇø¼ä·¶Î§£¬ËùÒÔÒª
-±£´æ½âµÄ¹¹³É¡£×îºó×¢ÒâÒ»ÏÂÂú×ãÌâÄ¿ÒªÇóµÄ½âµÄÌõ¼ş£¬ºÜ¶àÇé¿öÒª±È½Ï*/
+/*å…¥é—¨é¢˜ã€‚åŠ¨è§„ã€‚è½¬ç§»æ–¹ç¨‹ dp[i]=max{dp[i], dp[i]+dp[i-1]}ã€‚å¦å¤–ï¼Œæœ¬é¢˜è¦æ±‚è¾“å‡ºåŒºé—´èŒƒå›´ï¼Œæ‰€ä»¥è¦
+  ä¿å­˜è§£çš„æ„æˆã€‚æœ€åæ³¨æ„ä¸€ä¸‹æ»¡è¶³é¢˜ç›®è¦æ±‚çš„è§£çš„æ¡ä»¶ï¼Œå¾ˆå¤šæƒ…å†µè¦æ¯”è¾ƒ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
 using namespace std;
- int dp[20005], pos[20005];
- int main()
- {
-    int t,i,n,j,m,p;
-    scanf("%d",&t);
-    for(i=1;i<=t;i++) {
-        scanf("%d",&n);
-        for(j=1; j<n; j++)
-            scanf("%d", &dp[j]);
+int dp[20005], pos[20005];
+int main()
+{
+	int t,i,n,j,m,p;
+	scanf("%d",&t);
+	for(i=1;i<=t;i++) {
+		scanf("%d",&n);
+		for(j=1; j<n; j++)
+			scanf("%d", &dp[j]);
 		pos[1] = 1;
 		for(j=2; j<n; j++) {
 			if(dp[j-1]<0) 
@@ -24,17 +24,17 @@ using namespace std;
 				pos[j] = pos[j-1];
 			}
 		}
-        m = dp[1];
-        p = 1;
+		m = dp[1];
+		p = 1;
 		for(j=2;j<n;j++) {
-            if(dp[j]>m) {
-                m = dp[j];
-                p = j;
-            }
+			if(dp[j]>m) {
+				m = dp[j];
+				p = j;
+			}
 			else if(dp[j] == m) {
 				if(j-pos[j]>p-pos[p]) {
 					m = dp[j];
-				    p = j;
+					p = j;
 				}
 				else if(j-pos[j]>p-pos[p]) {
 					if(pos[j]<pos[p]) {
@@ -44,13 +44,13 @@ using namespace std;
 				}
 			}
 		}
-        if(m>0)
-            printf("The nicest part of route %d is between stops %d and %d\n", i,pos[p],p+1);
-        else
-            printf("Route %d has no nice parts\n",i);
-    }
+		if(m>0)
+			printf("The nicest part of route %d is between stops %d and %d\n", i,pos[p],p+1);
+		else
+			printf("Route %d has no nice parts\n",i);
+	}
 	return 0;
- }
+}
 
 
 

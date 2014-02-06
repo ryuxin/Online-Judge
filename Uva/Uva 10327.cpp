@@ -1,4 +1,4 @@
-/*·ÖÖÎ£¬ÄæĞòÊı¡£ÀàËÆ¹é²¢ÅÅĞò£¬½«Êı×é·ÖÎªÁ½°ë£¬·Ö±ğÇó³öÕâÁ½°ëµÄÄæĞòÊı²¢ÅÅĞò£¬ÔÙÇóÕâÁ½°ëÖ®¼äµÄÄæĞòÊı*/
+/*åˆ†æ²»ï¼Œé€†åºæ•°ã€‚ç±»ä¼¼å½’å¹¶æ’åºï¼Œå°†æ•°ç»„åˆ†ä¸ºä¸¤åŠï¼Œåˆ†åˆ«æ±‚å‡ºè¿™ä¸¤åŠçš„é€†åºæ•°å¹¶æ’åºï¼Œå†æ±‚è¿™ä¸¤åŠä¹‹é—´çš„é€†åºæ•°*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -9,37 +9,37 @@ using namespace std;
 int data[Maxl], temp[Maxl];
 int Reverse_num(int l, int r)
 {
-    int i, j, m, re, t;
-    if(l == r)
-        return 0;
-    m = (l+r)/2;
-    re = Reverse_num(l, m)+Reverse_num(m+1, r);
-    i = t = l;
-    j = m+1;
-    while(i<=m && j<=r) {
-        if(data[i]>data[j]) {
-            re = re+m-i+1;
-            temp[t++] = data[j++];
-        }
-        else
-            temp[t++] = data[i++];
-    }
-    while (i<=m) {
-        temp[t++] = data[i++];
-    }
-    for(i=l; i<t; i++)
-        data[i] = temp[i];
-    return re;
+	int i, j, m, re, t;
+	if(l == r)
+		return 0;
+	m = (l+r)/2;
+	re = Reverse_num(l, m)+Reverse_num(m+1, r);
+	i = t = l;
+	j = m+1;
+	while(i<=m && j<=r) {
+		if(data[i]>data[j]) {
+			re = re+m-i+1;
+			temp[t++] = data[j++];
+		}
+		else
+			temp[t++] = data[i++];
+	}
+	while (i<=m) {
+		temp[t++] = data[i++];
+	}
+	for(i=l; i<t; i++)
+		data[i] = temp[i];
+	return re;
 }
 int main()
 {
-    int n, i, r;
-    while(scanf("%d",&n)>0) {
-        for(i=0; i<n; i++)
-            scanf("%d", &data[i]);
-        r = Reverse_num(0, n-1);
-        printf("Minimum exchange operations : %d\n",r);
-    }
-    return 0;
+	int n, i, r;
+	while(scanf("%d",&n)>0) {
+		for(i=0; i<n; i++)
+			scanf("%d", &data[i]);
+		r = Reverse_num(0, n-1);
+		printf("Minimum exchange operations : %d\n",r);
+	}
+	return 0;
 }
 

@@ -1,7 +1,7 @@
 /*
-»ØËÝËÑË÷£¬Ô²ÅÅÁÐ¡£ÆðÊ¼Î»ÖÃ¿ÉÒÔ¼Ù¶¨Ò»Ö±ÊÇ1£¬ÒòÎª¶ÔÈÎÒâÒ»¸öÔ²ÅÅÁÐ£¬¶¼¿ÉÒÔÍ¨¹ýÐý×ª£¬½«1ÒÆµ½ÆðÊ¼µÄÎ»ÖÃ¡£
-ÏàÁÚÁ½¸öÊýÖ®ºÍÎªËØÊý£¬ÔòËûÃÇÖÁÉÙÒªÓÐ²»Í¬µÄÆæÅ¼ÐÔ¡£Òò´ËÆæÊýÎ»ÖÃÖ»ÐèÃ¶¾ÙÆæÊý£¬Å¼ÊýÎ»ÖÃÖ»ÐèÃ¶¾ÙÅ¼Êý¡£
-ÁíÍâ£¬¿ÉÏÈ½«ËùÓÐËØÊý¶¼´æÏÂÀ´
+  å›žæº¯æœç´¢ï¼Œåœ†æŽ’åˆ—ã€‚èµ·å§‹ä½ç½®å¯ä»¥å‡å®šä¸€ç›´æ˜¯1ï¼Œå› ä¸ºå¯¹ä»»æ„ä¸€ä¸ªåœ†æŽ’åˆ—ï¼Œéƒ½å¯ä»¥é€šè¿‡æ—‹è½¬ï¼Œå°†1ç§»åˆ°èµ·å§‹çš„ä½ç½®ã€‚
+  ç›¸é‚»ä¸¤ä¸ªæ•°ä¹‹å’Œä¸ºç´ æ•°ï¼Œåˆ™ä»–ä»¬è‡³å°‘è¦æœ‰ä¸åŒçš„å¥‡å¶æ€§ã€‚å› æ­¤å¥‡æ•°ä½ç½®åªéœ€æžšä¸¾å¥‡æ•°ï¼Œå¶æ•°ä½ç½®åªéœ€æžšä¸¾å¶æ•°ã€‚
+  å¦å¤–ï¼Œå¯å…ˆå°†æ‰€æœ‰ç´ æ•°éƒ½å­˜ä¸‹æ¥
 */
 #include <iostream>
 #include <stdlib.h>
@@ -25,10 +25,10 @@ void DFS(int k)
 	j=k%2;
 	for(i=2-j;i<=n;i=i+2) {
 		if((used[i]==false)&&(sushu[i+re[k-1]]==true)) {
-				re[k]=i;
-				used[i]=true;
-				DFS(k+1);
-				used[i]=false;
+			re[k]=i;
+			used[i]=true;
+			DFS(k+1);
+			used[i]=false;
 		}
 	}
 }
@@ -49,7 +49,7 @@ int main()
 			used[i]=false;
 		t++;
 		if(t!=1)
-				printf("\n");
+			printf("\n");
 		printf("Case %d:\n", t);
 		DFS(2);
 	}

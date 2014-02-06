@@ -1,4 +1,4 @@
-/*ÈëÃÅÌâ¡£Îª¾ä×Ó½¨Á¢µ¹ÅÅ±í*/
+/*å…¥é—¨é¢˜ã€‚ä¸ºå¥å­å»ºç«‹å€’æ’è¡¨*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -7,23 +7,23 @@
 #include <queue>
 using namespace std;
 struct pos {
-    int id;
-    int off;
+	int id;
+	int off;
 };
 struct Invert {
-    char key[30];       //±£´æÎª´óĞ´ĞÎÊ½
-    int count;
-    pos tittles[205];
+	char key[30];        //ä¿å­˜ä¸ºå¤§å†™å½¢å¼
+	int count;
+	pos tittles[205];
 };
 Invert indexes[30005];
 char ignore[52][12], tittle[205][300], temp[30];
 int t, n, num;
 int comp1(const void *a1, const void *a2)
 {
-    char *p1, *p2;
-    p1 = (char *)a1;
-    p2 = (char *)a2;
-    return strcmp(p1, p2);
+	char *p1, *p2;
+	p1 = (char *)a1;
+	p2 = (char *)a2;
+	return strcmp(p1, p2);
 }
 int comp2(const void *a1, const void *a2)
 {
@@ -32,41 +32,41 @@ int comp2(const void *a1, const void *a2)
 	p2 = (Invert *)a2;
 	return strcmp(p1->key, p2->key);
 }
-bool Search(int k, int l, int r)       //¼ì²é¸Ãµ¥´ÊÊÇ·ñÎªignore£¬×ªĞ¡Ğ´
+bool Search(int k, int l, int r)       //æ£€æŸ¥è¯¥å•è¯æ˜¯å¦ä¸ºignoreï¼Œè½¬å°å†™
 {
-    int i = 0, j, m, re;
-    for(j=l; j<r; j++) {
-        if(tittle[k][j]>='A' && tittle[k][j]<= 'Z')
-            temp[i++] = 'a'+tittle[k][j]-'A';
-        else
-            temp[i++] = tittle[k][j];
-    }
-    temp[i] = '\0';
-    l = 0;
-    r = t-1;
-    while(l<=r) {
+	int i = 0, j, m, re;
+	for(j=l; j<r; j++) {
+		if(tittle[k][j]>='A' && tittle[k][j]<= 'Z')
+			temp[i++] = 'a'+tittle[k][j]-'A';
+		else
+			temp[i++] = tittle[k][j];
+	}
+	temp[i] = '\0';
+	l = 0;
+	r = t-1;
+	while(l<=r) {
 		m = (l+r)/2;
-        re = strcmp(ignore[m], temp);
-        if(re == 0)
-            return true;
-        else if(re>0)
+		re = strcmp(ignore[m], temp);
+		if(re == 0)
+			return true;
+		else if(re>0)
 			r = m-1;
 		else
 			l = m+1;
-    }
-    return false;
+	}
+	return false;
 }
-void Insert(int k, int l, int r)   //½«µ¥´Ê²åÈëµ¹ÅÅ±í£¬×ª´óĞ´
+void Insert(int k, int l, int r)     //å°†å•è¯æ’å…¥å€’æ’è¡¨ï¼Œè½¬å¤§å†™
 {
 	int i, j;
 	i = 0;
-    for(j=l; j<r; j++) {
-        if(tittle[k][j]>='a' && tittle[k][j]<= 'z')
-            temp[i++] = 'A'+tittle[k][j]-'a';
-        else
-            temp[i++] = tittle[k][j];
-    }
-    temp[i] = '\0';
+	for(j=l; j<r; j++) {
+		if(tittle[k][j]>='a' && tittle[k][j]<= 'z')
+			temp[i++] = 'A'+tittle[k][j]-'a';
+		else
+			temp[i++] = tittle[k][j];
+	}
+	temp[i] = '\0';
 	for(i=0; i<num; i++) {
 		if(strcmp(indexes[i].key, temp) == 0) {
 			indexes[i].tittles[indexes[i].count].id  = k; 
@@ -82,25 +82,25 @@ void Insert(int k, int l, int r)   //½«µ¥´Ê²åÈëµ¹ÅÅ±í£¬×ª´óĞ´
 		indexes[i].count = 1;
 		num++;
 	}
-    return ;
+	return ;
 }
-void Parser(int k)         //ÎªµÚk¸ö¾ä×Ó½¨Á¢µ¹ÅÅ±í
+void Parser(int k)          //ä¸ºç¬¬kä¸ªå¥å­å»ºç«‹å€’æ’è¡¨
 {
-    int i, j, l;
-    l = strlen(tittle[k]);
-    i = 0;
+	int i, j, l;
+	l = strlen(tittle[k]);
+	i = 0;
 	tittle[k][l] = ' ';
-    for(j=0; j<=l; j++) {
-        if(tittle[k][j] == ' ') {
-            if(Search(k, i, j) == false)
-                Insert(k, i, j);
-            i = j+1;
-        }
-    }
+	for(j=0; j<=l; j++) {
+		if(tittle[k][j] == ' ') {
+			if(Search(k, i, j) == false)
+				Insert(k, i, j);
+			i = j+1;
+		}
+	}
 	tittle[k][l] = '\0';
-    return ;
+	return ;
 }
-void Output(int k)         //Êä³öµÚk¸öµ¥´Ê¶ÔÓ¦µÄ¾ä×Ó
+void Output(int k)         //è¾“å‡ºç¬¬kä¸ªå•è¯å¯¹åº”çš„å¥å­
 {
 	int len1, len2, i, count, j, id, off;
 	len1 = strlen(indexes[k].key);
@@ -124,25 +124,25 @@ void Output(int k)         //Êä³öµÚk¸öµ¥´Ê¶ÔÓ¦µÄ¾ä×Ó
 		}
 		printf("\n");
 	}
-    return ;
+	return ;
 }
 int main()
 {
-    int i;
-    t = n = num = 0;
-    while(1) {
-        scanf("%s", &ignore[t]);
-        if(strcmp("::", ignore[t]) == 0)
-            break;
-        t++;
-    }
-    qsort(ignore, t, sizeof(ignore[0]), comp1);
+	int i;
+	t = n = num = 0;
+	while(1) {
+		scanf("%s", &ignore[t]);
+		if(strcmp("::", ignore[t]) == 0)
+			break;
+		t++;
+	}
+	qsort(ignore, t, sizeof(ignore[0]), comp1);
 	gets(tittle[0]);
-    while(gets(tittle[n]) != NULL)      n++;
+	while(gets(tittle[n]) != NULL)      n++;
 	for(i=0; i<n; i++)
 		Parser(i);
 	qsort(indexes, num, sizeof(Invert), comp2);
 	for(i=0; i<num; i++)
 		Output(i);
-    return 0;
+	return 0;
 }

@@ -1,4 +1,4 @@
-//»Î√≈Ã‚°£
+/*ÂÖ•Èó®È¢ò„ÄÇ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

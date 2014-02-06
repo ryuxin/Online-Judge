@@ -1,6 +1,6 @@
-/*»ù´¡Ìâ¡£ËÑË÷+µÝÍÆ¡£ÌâÄ¿´óÒâ£ºSkÎª123¡­kµÄÅÅÁÐ.ÁîPi=10^i-1.
-sk[i]±íÊ¾´Ó1µ½Pi¹²ÓÐ¶àÉÙÎ».re[i]±íÊ¾´ÓS1µ½S(Pi)¹²ÓÐ¶àÉÙÎ».
-¶ÔÓÚ¸ø¶¨µÄ³¤¶Èn£¬ÒÀ´ÎÈ·¶¨ÆäÊôÓÚÄÄ¸öSk£¬ÊôÓÚSkÖÐµÄÄÄ¸öÊý£¬·µ»ØÕâ¸öÊý¶ÔÓ¦Î»ÉÏµÄÊý×Ö*/
+/*åŸºç¡€é¢˜ã€‚æœç´¢+é€’æŽ¨ã€‚é¢˜ç›®å¤§æ„ï¼šSkä¸º123â€¦kçš„æŽ’åˆ—.ä»¤Pi=10^i-1.
+  sk[i]è¡¨ç¤ºä»Ž1åˆ°Piå…±æœ‰å¤šå°‘ä½.re[i]è¡¨ç¤ºä»ŽS1åˆ°S(Pi)å…±æœ‰å¤šå°‘ä½.
+  å¯¹äºŽç»™å®šçš„é•¿åº¦nï¼Œä¾æ¬¡ç¡®å®šå…¶å±žäºŽå“ªä¸ªSkï¼Œå±žäºŽSkä¸­çš„å“ªä¸ªæ•°ï¼Œè¿”å›žè¿™ä¸ªæ•°å¯¹åº”ä½ä¸Šçš„æ•°å­—*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +11,7 @@ using namespace std;
 #define M 6
 long long int re[M], sk[M];
 char temp[M+2];
-int Find(int k, int l)          //ÔÚÊý×ÖkÖÐ£¬µÚl¸öÊý×Ö
+int Find(int k, int l)         //åœ¨æ•°å­—kä¸­ï¼Œç¬¬lä¸ªæ•°å­—
 {
 	int i = 0;
 	while(k>0) {
@@ -20,7 +20,7 @@ int Find(int k, int l)          //ÔÚÊý×ÖkÖÐ£¬µÚl¸öÊý×Ö
 	}
 	return temp[i-l]-'0';
 }
-int Calc(int l)                //ÕÒµ½ÆäÊôÓÚSkÖÐµÄÄÄ¸öÊý×Ö
+int Calc(int l)              //æ‰¾åˆ°å…¶å±žäºŽSkä¸­çš„å“ªä¸ªæ•°å­—
 {
 	int i, t, j;
 	for(i=0; i<M; i++)
@@ -31,7 +31,7 @@ int Calc(int l)                //ÕÒµ½ÆäÊôÓÚSkÖÐµÄÄÄ¸öÊý×Ö
 	t = t-(j-1)*i;
 	return Find(pow(10, i-1)-1+j, t);
 }
-int Proc(int k)                //È·¶¨ÆäÊôÓÚÄÄ¸öSk
+int Proc(int k)                 //ç¡®å®šå…¶å±žäºŽå“ªä¸ªSk
 {
 	int i, s = 0, t, j;
 	for(i=0; i<M; i++) 
