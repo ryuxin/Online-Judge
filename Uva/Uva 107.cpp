@@ -1,8 +1,8 @@
-/*�����⡣��Ŀ���⣬��һ��è����߶���֪Ϊa����������Է�N��è�������ǵĸ߶�������1/(N+1)���Դ����ƣ�
-ÿ��è���涼���Է�N��Сè��ÿ��Сè�ĸ߶�����1/(N+1)��ֱ��Сè�ĸ߶�Ϊ1����֪�߶�Ϊ1��è�ĸ���Ϊb��
-��һ����x�㣬��һ��߶�Ϊ1���ڶ��θ߶�Ϊ(N+1),��x��߶�Ϊ(N+1)^x=a���ҵ�1��è�ĸ���ΪN^x=b, ���N��
-�߽��������ÿ��è����ֻ�ܷ�һ��èʱ�����ȱ����еĹ���Ϊ1��
-���ң������棬��èֻ��һ��ʱ��Ҳ���������*/
+/*入门题。题目大意，有一个猫，其高度已知为a，他里面可以放N个猫，但他们的高度是他的1/(N+1)，以此类推，
+  每个猫里面都可以放N个小猫，每个小猫的高度是其1/(N+1)，直到小猫的高度为1，已知高度为1的猫的个数为b。
+  设一共有x层，第一层高度为1，第二次高度为(N+1),第x层高度为(N+1)^x=a，且第1层猫的个数为N^x=b, 解出N。
+  边界情况，当每个猫里面只能放一个猫时，即等比数列的公比为1。
+  而且，这里面，当猫只有一层时，也是特殊情况*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -12,21 +12,21 @@
 using namespace std;
 int Pow(int a, int b)
 {
-    int r = 1, s = b;
-    while(s<=a) {
-        if(a == s)
-            return r;
-        s=s*b;
-        r++;
-    }
-    return -1;
+	int r = 1, s = b;
+	while(s<=a) {
+		if(a == s)
+			return r;
+		s=s*b;
+		r++;
+	}
+	return -1;
 }
 int main()
 {
-    int a, b, i, p, q;
-    while(scanf("%d %d", &a, &b)>0) {
-        if(a == 0 && b == 0)
-            break;
+	int a, b, i, p, q;
+	while(scanf("%d %d", &a, &b)>0) {
+		if(a == 0 && b == 0)
+			break;
 		if(b == 1) {
 			if(a == 1)
 				printf("0 1\n");
@@ -46,6 +46,6 @@ int main()
 			}
 			printf("%d %d\n", (b-1)/(i-1), i*(a-b)+a);
 		}
-    }
-    return 0;
+	}
+	return 0;
 }

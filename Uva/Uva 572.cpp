@@ -1,4 +1,4 @@
-//ÈëÃÅÌâ.ÉîËÑ¡£ÒÀ´ÎÉ¨ÃèÃ¿Ò»¸ö½Úµã£¬·¢ÏÖÒ»¸ö@½ÚµãÊ±£¬ÒÔËûÎª¸ù½øÐÐÉîËÑ£¬½«ÓëÆäÏàÁÚµÄ¶¼±êÎª*£¬¼ÆÊý¼ÓÒ»
+/*å…¥é—¨é¢˜.æ·±æœã€‚ä¾æ¬¡æ‰«ææ¯ä¸€ä¸ªèŠ‚ç‚¹ï¼Œå‘çŽ°ä¸€ä¸ª@èŠ‚ç‚¹æ—¶ï¼Œä»¥ä»–ä¸ºæ ¹è¿›è¡Œæ·±æœï¼Œå°†ä¸Žå…¶ç›¸é‚»çš„éƒ½æ ‡ä¸º*ï¼Œè®¡æ•°åŠ ä¸€*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

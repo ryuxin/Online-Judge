@@ -1,5 +1,4 @@
 #include "ryx_bignum.h"
-
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +26,7 @@ int main()
 		for(i=0;i<6;i++)
 			if(data[i]=='.')
 				break;
-		l=i >5? 5 : i;                           //Ğ¡ÊıµãµÄÎ»ÖÃ,¿ÉÄÜÃ»ÓĞĞ¡Êıµã£¿£¿
+		l=i >5? 5 : i;                          //å°æ•°ç‚¹çš„ä½ç½®,å¯èƒ½æ²¡æœ‰å°æ•°ç‚¹ï¼Ÿï¼Ÿ
 		for(i=i+1;i<7;i++)
 			data[i-1]=data[i];
 		StingtoBigNum(data,&a1);
@@ -35,13 +34,13 @@ int main()
 		Unsign_exp(&a1,exp,&a2);
 		sPrint_BigNum(re,&a2);
 		lr=strlen(re);
-		l=(5-l)*exp;                    //Ğ¡ÊıµÄÎ»Êı
+		l=(5-l)*exp;                       //å°æ•°çš„ä½æ•°
 		if(l>=lr) {
 			int tlr=lr;
-			while(re[lr-1]=='0'&&lr>0) {        //×¢ÒâÉ¾³ıÄ©Î²µÄ0£¡£¡
+			while(re[lr-1]=='0'&&lr>0) {        //æ³¨æ„åˆ é™¤æœ«å°¾çš„0ï¼ï¼
 				lr--;
 			}
-			if(lr==0)                    //¿ÉÄÜÊÇ.0000£¿£¿
+			if(lr==0)                      //å¯èƒ½æ˜¯.0000ï¼Ÿï¼Ÿ
 				printf("0");
 			else {
 				printf(".");

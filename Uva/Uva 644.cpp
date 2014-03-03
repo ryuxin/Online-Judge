@@ -1,4 +1,4 @@
-//»Î√≈Ã‚°£
+/*ÂÖ•Èó®È¢ò„ÄÇ*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -24,7 +24,7 @@ int main()
 			qsort(code,i,sizeof(code[0]),comp);
 			for(j=0;j<i-1;j++) {
 				for(k=j+1;k<i;k++) {
-					//!!±ÿ–Î ««∞◊∫£¨“≤æÕ «∆ ºœ‡Õ¨µƒŒª÷√±ÿ–Î‘⁄ø™ º¥¶
+					//!!ÂøÖÈ°ªÊòØÂâçÁºÄÔºå‰πüÂ∞±ÊòØËµ∑ÂßãÁõ∏ÂêåÁöÑ‰ΩçÁΩÆÂøÖÈ°ªÂú®ÂºÄÂßãÂ§Ñ
 					if(strstr(code[k],code[j])==code[k]) {
 						re=false;
 						break;

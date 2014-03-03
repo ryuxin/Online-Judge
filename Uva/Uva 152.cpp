@@ -1,5 +1,5 @@
 /*
-�����⡣��������е�֮��ľ��룬�ڷֱ����ÿ���������ھӡ�
+  入门题。先求出所有点之间的距离，在分别求出每个点的最近邻居。
 */
 #include <iostream>
 #include <stdlib.h>

@@ -1,5 +1,5 @@
-//ÈëÃÅÌâ.µÝ¹é¡£¸ù¾ÝÇ°Ðò±éÀúµÄ¸ù½Úµã£¬ÔÚÖÐÐò±éÀúÖÐÈ·¶¨ÆäÎ»ÖÃ£¬²¢ÒÔ´Ë»®·Ö³ö×óÓÒ×ÓÊ÷¡£ÔÚ¸ù¾ÝÁ½×ÓÊ÷µÄ³¤¶È£¬
-//ÔÚÇ°Ðò±éÀú»®·Ö³öÁ½¸ö×ÓÊ÷£¬È»ºóµÝ¹é´¦ÀíÃ¿Ò»¸ö×ÓÊ÷
+/*å…¥é—¨é¢˜.é€’å½’ã€‚æ ¹æ®å‰åºéåŽ†çš„æ ¹èŠ‚ç‚¹ï¼Œåœ¨ä¸­åºéåŽ†ä¸­ç¡®å®šå…¶ä½ç½®ï¼Œå¹¶ä»¥æ­¤åˆ’åˆ†å‡ºå·¦å³å­æ ‘ã€‚åœ¨æ ¹æ®ä¸¤å­æ ‘çš„é•¿åº¦ï¼Œ
+  åœ¨å‰åºéåŽ†åˆ’åˆ†å‡ºä¸¤ä¸ªå­æ ‘ï¼Œç„¶åŽé€’å½’å¤„ç†æ¯ä¸€ä¸ªå­æ ‘*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -10,17 +10,17 @@ char pre[30],in[30];
 void Recover(int sp,int si,int len)
 {
 	int i,l;
-	if(len==0)                                //¿ÕÊ÷£¬Ö±½Ó·µ»Ø 
+	if(len==0)                                  //ç©ºæ ‘ï¼Œç›´æŽ¥è¿”å›ž 
 		return ;
-	if(len==1)                                //Ö»ÓÐÒ»¸ö½Úµã£¬Ö±½ÓÊä³ö
+	if(len==1)                                  //åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹ï¼Œç›´æŽ¥è¾“å‡º
 		cout<<pre[sp];
 	else {
-		for(i=si;i<si+len;i++)                //Ñ°ÕÒ¸ù½Úµã£¬»®·ÖÁ½¸ö×ÓÊ÷
+		for(i=si;i<si+len;i++)                 //å¯»æ‰¾æ ¹èŠ‚ç‚¹ï¼Œåˆ’åˆ†ä¸¤ä¸ªå­æ ‘
 			if(in[i]==pre[sp])
 				break;            
-		Recover(sp+1,si,i-si);                //´¦Àí×ó×ÓÊ÷
-		Recover(sp+i-si+1,i+1,len-1-i+si);    //´¦ÀíÓÒ×ÓÊ÷
-		cout<<pre[sp];                        //´¦Àí¸ù½Úµã
+		Recover(sp+1,si,i-si);                //å¤„ç†å·¦å­æ ‘
+		Recover(sp+i-si+1,i+1,len-1-i+si);    //å¤„ç†å³å­æ ‘
+		cout<<pre[sp];                        //å¤„ç†æ ¹èŠ‚ç‚¹
 	}
 	return ;
 }

@@ -1,4 +1,4 @@
-/*ÈëÃÅÌâ¡£ÊıÑ§Ìâ¡£¼ÆËã×îºóµÄ¸ß¶È£¬µ±Ç°ÄÇĞ©±È´Ë¸ß¶È¸ßµÄ×©¿éÒ»¶¨Òª°á×ß£¬ÇÒÕâ¾ÍÊÇ×îĞ¡Öµ*/
+/*å…¥é—¨é¢˜ã€‚æ•°å­¦é¢˜ã€‚è®¡ç®—æœ€åçš„é«˜åº¦ï¼Œå½“å‰é‚£äº›æ¯”æ­¤é«˜åº¦é«˜çš„ç –å—ä¸€å®šè¦æ¬èµ°ï¼Œä¸”è¿™å°±æ˜¯æœ€å°å€¼*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -9,22 +9,22 @@ using namespace std;
 int data[55];
 int main()
 {
-    int n, i, s, r, rs, t=0;
-    while(scanf("%d", &n)>0) {
-        t++;
-        if(n == 0)
-            break;
-        s = r = 0;
-        for(i=0; i<n; i++) {
-            scanf("%d", &data[i]);
-            s = s+data[i];
-        }
-        rs = s/n;
-        for(i=0; i<n; i++)
-            if(data[i]>rs)
-                r = r+data[i]-rs;
-        printf("Set #%d\n", t);
-        printf("The minimum number of moves is %d.\n\n", r);
-    }
-    return 0;
+	int n, i, s, r, rs, t=0;
+	while(scanf("%d", &n)>0) {
+		t++;
+		if(n == 0)
+			break;
+		s = r = 0;
+		for(i=0; i<n; i++) {
+			scanf("%d", &data[i]);
+			s = s+data[i];
+		}
+		rs = s/n;
+		for(i=0; i<n; i++)
+			if(data[i]>rs)
+				r = r+data[i]-rs;
+		printf("Set #%d\n", t);
+		printf("The minimum number of moves is %d.\n\n", r);
+	}
+	return 0;
 }

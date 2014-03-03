@@ -1,5 +1,5 @@
-//ÈëÃÅÌâ¡£¡®|¡¯ºÍ'.'ÊÇÏÞ¶¨·û£¬³ý´ËÖ®Íâ»¹ÓÐ°ËÎ»£¬±íÊ¾Ò»¸ö°ËÎ»µÄ¶þ½øÖÆÊý£¬¸ÃÊý¼´Îª×Ö·ûµÄascii Âë,
-//' '´ú±í0£¬'o'´ú±í1
+/*å…¥é—¨é¢˜ã€‚â€˜|â€™å’Œ'.'æ˜¯é™å®šç¬¦ï¼Œé™¤æ­¤ä¹‹å¤–è¿˜æœ‰å…«ä½ï¼Œè¡¨ç¤ºä¸€ä¸ªå…«ä½çš„äºŒè¿›åˆ¶æ•°ï¼Œè¯¥æ•°å³ä¸ºå­—ç¬¦çš„ascii ç ,
+  ' 'ä»£è¡¨0ï¼Œ'o'ä»£è¡¨1*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

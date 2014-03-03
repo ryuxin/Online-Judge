@@ -10,15 +10,15 @@ bool check[Len]={0};
 int sushu[Len/2];
 int Shaifa(void)
 {
-    int i,l=0,j;
-    for(i=2;i<Len;i++) {
+	int i,l=0,j;
+	for(i=2;i<Len;i++) {
 		if(check[i]==false) {
 			for(j=i+i;j<Len;j=j+i)
 				check[j]=true;
-	       sushu[l++]=i;
+			sushu[l++]=i;
 		}
 	}
-    return l;
+	return l;
 }
 int main()
 { 
