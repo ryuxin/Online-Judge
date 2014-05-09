@@ -21,13 +21,13 @@ int main()
 		while(1) {
 			scanf("%c", &num[l]);
 			if (num[l] == ' ') {
-				sscanf(num, "%d", &an);
+				an = atoi(num);
 				bn = an+k*bn;
 				printf(" %d", bn);
 				l = 0;
 			}
 			else if (num[l] == '\n') {
-				sscanf(num, "%d", &an);
+				an = atoi(num);
 				bn = an+k*bn;
 				printf("\nr = %d\n\n", bn);
 				break;
