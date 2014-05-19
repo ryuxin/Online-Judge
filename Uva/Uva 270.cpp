@@ -70,3 +70,56 @@ int main()
 	}
 	return 0;
 }	
+/*
+#define NUM 705
+#define LEN 1010
+struct Point {
+    int x, y;
+};
+Point data[NUM];
+int num, best, cur, inf, res;
+double k[NUM];
+char in[30];
+int comp(const void *a1, const void *a2)
+{
+	double *p1, *p2;
+	p1 = (double *)a1;
+	p2 = (double *)a2;
+	if ((*p1)>(*p2)) return 1;
+	else if ((*p1)<(*p2)) return -1;
+	return 0;
+}
+int main()
+{
+    int i, j;
+	double x, y;
+    while(scanf("%d", &num)>0) {
+        if (num == 0) break;
+        for(i=0; i<num; i++)
+            scanf("%d%d", &data[i].x, &data[i].y);
+        best = 0;
+		for(i=0; i<num; i++) {
+			cur = 2;
+			inf = res = 0;
+			for(j=0; j<num; j++) {
+				x = data[j].x-data[i].x;
+				y = data[j].y-data[i].y;
+				if (x == 0) inf++;
+				else k[res++] = y/x;
+			}
+			qsort(k, res, sizeof(double), comp);
+			if (inf>best) best = inf;
+			for(j=1; j<res; j++) {
+				if (k[j] == k[j-1]) cur++;
+				else {
+					if (cur>best) best = cur;
+					cur = 2;
+				}
+			}
+			if (cur>best) best = cur;
+		}
+        printf("%d\n", best);
+    }
+    return 0;
+}
+*/
