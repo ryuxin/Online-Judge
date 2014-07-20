@@ -1,7 +1,3 @@
-// ConsoleApplication1.cpp : Defines the entry point for the console application.
-//
-
-#include "stdafx.h"
 /*基础题。当且仅当，只有一行和一列错误时，矩阵是可恢复的*/
 #include <stdio.h>
 #include <stdlib.h>

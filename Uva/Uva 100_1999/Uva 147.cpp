@@ -1,7 +1,3 @@
-// ConsoleApplication1.cpp : Defines the entry point for the console application.
-//
-
-#include "stdafx.h"
 /*基础题。动规。无限制背包。dp[i][j]表示从第i个物品开始，填满容量j的背包的
   方法数。对于第i个物品，有两种情况，不放或至少放一个。若不放，方法数为
   dp[i+1][j], 若放，则为dp[i][j-vi], 故转移方程为
