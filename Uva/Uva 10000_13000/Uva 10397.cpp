@@ -1,3 +1,7 @@
+/*基础题。最小生成树。可以根据已有的边，提前
+  建立起顶点之间的连通性，然后使用Kruskal算
+  法。或者将这些的边的权重设为0，这样这些边
+  都会最先被选出来，然后建立连通性。*/
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
