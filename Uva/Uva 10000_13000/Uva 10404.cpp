@@ -9,31 +9,29 @@ using namespace std;
 #define NUM 1000005 
 #define LEN 15
 int dp[NUM], data[LEN], m;
-int DP(int k)
-{
-	int i;
-	if (dp[k] == -1) {
-		for(i=0; i<m; ++i) {
-			if (k>data[i] && DP(k-data[i])) {
-				dp[k] = 0;
-				break;
-			}
-		}
-		if (i == m) dp[k] == 1;
-	}
-	return dp[k];
-}
 int main()
 {
-	int n, i, j;
+	int n, i, j, mm;
 	while(scanf("%d", &n)>0) {
 		scanf("%d", &m);
 		for(i=0; i<m; ++i) scanf("%d", &data[i]);
 		for(i=0; i<m; ++i) dp[data[i]] = 0;
 		dp[0] = 1;
-		for(i=2; i<=n; ++i) {
+		mm = data[0];
+		for(i=1; i<m; ++i) if (data[i]>mm) mm = data[i];
+		if (mm>n) mm = n;
+		for(i=2; i<mm; ++i) {
 			for(j=0; j<m; ++j) {
 				if (data[j]<=i && dp[i-data[j]]) {
+					dp[i] = 0;
+					break;
+				}
+			}
+			if (j == m) dp[i] = 1;
+		}
+		for(; i<=n; ++i) {
+			for(j=0; j<m; ++j) {
+				if (dp[i-data[j]]) {
 					dp[i] = 0;
 					break;
 				}
