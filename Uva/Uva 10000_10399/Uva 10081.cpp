@@ -2,7 +2,6 @@
  * 计算f(i, j)，首先取到i的概率为1/(k+1)，第二位的取法只能是i，i－1和i+1，且他们对应的概率为f(i-1, n-1)，代入即可。
  * 边界情况，当i等于0或k时，i－1或i+1不存在
  */
-
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -24,11 +23,11 @@ Calc(int k, int n)
         for(i=0; i<=k; i++) {
             if (i>0 && i<k) {
                 dp[i][j] = (dp[i][j-1] + dp[i-1][j-1] + dp[i+1][j-1]) / (dk+1);
-            } else if (i==0) {
+            } else if (i==0 && i<k) {
                 dp[i][j] = (dp[i][j-1] + dp[i+1][j-1]) / (dk+1);
-            } else {
+            } else if (i == k && i>0){
                 dp[i][j] = (dp[i][j-1] + dp[i-1][j-1]) / (dk+1);
-            }
+            } else dp[i][j] = dp[i][j-1] / (dk+1);
         }
     }
     for(i=0; i<=k; i++) r += dp[i][n];
